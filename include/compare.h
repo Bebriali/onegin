@@ -6,7 +6,7 @@ enum SORT_TYPE
     ORIGINAL = 2
 };
 
-int compare_straight(char** strings, size_t first, size_t second);
+int compare_straight(char* first, char* second);
 void swap_strings(char** strings, size_t first_string, size_t second_string);
 int compare_back(char** strings, char** ends, size_t first, size_t second);
 
