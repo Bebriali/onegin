@@ -6,15 +6,16 @@
 #include "compare.h"
 #include "work_with_file.h"
 #include "cutbuf.h"
+#include "merge_sort.h"
 
-void make_text (wfile result_file, string_borders buffer_borders, const int sort_type);
+void make_text (wfile result_file, string_borders buffer_borders, bool sort_type);
 
 const char* choose_vers (const int sort_type);
 
 int main ()
 {
-    const char* origin_filename = "text.txt";
-    const char* or_type_stream = "rb";
+    const char* origin_filename = "onegin.txt";
+    const char* or_type_stream = "r+b";
     const char* result_filename = "onegin_sorted.txt";
     const char* res_type_stream = "wb";
 
@@ -33,17 +34,16 @@ int main ()
     printf("file_size = %d\n", file_size);
 
     struct string_borders buffer_borders = find_borders(buffer, origin_file.fsize);
+    fseek(origin_file.stream, 0, SEEK_SET);
+    put_strings (buffer_borders.begline, buffer_borders.strings_quantity, origin_file.stream);
+    fseek(origin_file.stream, 0, SEEK_SET);
+    file_size = fread(buffer, sizeof(char), origin_file.fsize, origin_file.stream);
+    buffer_borders = find_borders(buffer, origin_file.fsize);
+    printf("file_size = %d\n", file_size);
 
-
-//    printf("strings_quantity = %d\n", buffer_borders.strings_quantity);
-//    for (size_t i = 0; i < buffer_borders.strings_quantity; i++)
-//    {
-//        printf("\tstring[%d] = %s\n", i, buffer_borders.begline[i]);
-//    }
-
-    make_text(result_file, buffer_borders, ORIGINAL);
+//    make_text(result_file, buffer_borders, ORIGINAL);
     make_text(result_file, buffer_borders, STRAIGHT);
-    make_text(result_file, buffer_borders, BACK);
+//    make_text(result_file, buffer_borders, BACK);
 
     fclose(result_file.stream);
     fclose(origin_file.stream);
@@ -54,23 +54,15 @@ int main ()
     return 0;
 }
 
-void make_text (wfile result_file, string_borders buffer_borders, const int sort_type)
+void make_text (wfile result_file, string_borders buffer_borders, bool sort_type)
 {
-//    printf("strings_quantity = %d\n", buffer_borders.strings_quantity);
-//    for (size_t i = 0; i < buffer_borders.strings_quantity; i++)
-//    {
-//        printf("\tstring[%d] = %s\n", i, buffer_borders.begline[i]);
-//    }
-
     if (sort_type != ORIGINAL)
     {
-        sort_strings(buffer_borders, sort_type);
+        buffer_borders.begline = merge_sort(buffer_borders.begline, buffer_borders.strings_quantity, sort_type);
     }
-
-//    printf("strings_quantity = %d\n", buffer_borders.strings_quantity);
 //    for (size_t i = 0; i < buffer_borders.strings_quantity; i++)
 //    {
-//        printf("\tstring[%d] = %s\n", i, buffer_borders.begline[i]);
+//        printf("begline[%d] = %s\n", i, buffer_borders.begline[i]);
 //    }
 
     const char* version = choose_vers(sort_type);

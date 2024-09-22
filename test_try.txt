@@ -1,34 +1,11 @@
-original version
------------
-
-     ......
-     ......
-     Moj dyadya samyh chestnyh pravil,
-     Kogda ne v shutku zanemog,
-     On uvazhat' sebya zastavil
-     I luchshe vydumat' ne mog.
-     Ego primer drugim nauka;
-     No, bozhe moj, kakaya skuka
-     S bol'nym sidet' i den' i noch',
-     Ne othodya ni shagu proch'!
-     Kakoe nizkoe kovarstvo
-     Poluzhivogo zabavlyat',
-     Emu podushki popravlyat',
-     Pechal'no podnosit' lekarstvo,
-     Vzdyhat' i dumat' pro sebya:
-     Kogda zhe chert voz'met tebya!"
 sorted straight version
-------------
-
-     ......
-     ......
+-----------
      Ego primer drugim nauka;
      Emu podushki popravlyat',
      I luchshe vydumat' ne mog.
      Kakoe nizkoe kovarstvo
      Kogda ne v shutku zanemog,
      Kogda zhe chert voz'met tebya!"
-     Moj dyadya samyh chestnyh pravil,
      Ne othodya ni shagu proch'!
      No, bozhe moj, kakaya skuka
      On uvazhat' sebya zastavil
@@ -36,22 +13,3 @@ sorted straight version
      Poluzhivogo zabavlyat',
      S bol'nym sidet' i den' i noch',
      Vzdyhat' i dumat' pro sebya:
-sorted back version
-------------
-
-     ......
-     Ego primer drugim nauka;
-     No, bozhe moj, kakaya skuka
-     Vzdyhat' i dumat' pro sebya:
-     Kogda zhe chert voz'met tebya!"
-     Kogda ne v shutku zanemog,
-     I luchshe vydumat' ne mog.
-     S bol'nym sidet' i den' i noch',
-     Ne othodya ni shagu proch'!
-     Moj dyadya samyh chestnyh pravil,
-     On uvazhat' sebya zastavil
-     Pechal'no podnosit' lekarstvo,
-     Kakoe nizkoe kovarstvo
-     Poluzhivogo zabavlyat',
-     Emu podushki popravlyat',
-     ......
